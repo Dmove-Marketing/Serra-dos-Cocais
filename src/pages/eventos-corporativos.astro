@@ -1,0 +1,357 @@
+---
+import Base from '../layouts/Base.astro';
+import config from '../../config.json';
+import Img from '../components/ui/Img.astro';
+import LeadForm from '../components/forms/LeadForm.astro';
+import '../styles/eventos-corporativos.css';
+---
+
+<Base
+  title="Serra dos Cocais — Eventos Corporativos em uma fazenda histórica"
+  description="Confraternizações, treinamentos e eventos corporativos em um ambiente inspirador. Estrutura completa, hospedagem e natureza em Itatiba, SP."
+  ogImage="https://media.dmove.com.br/clients/serra-dos-cocais/photos/hero_corporativo_resultado.webp"
+  whatsAppMessage="Olá! Como posso te ajudar com o seu evento corporativo?\nPreencha os campos abaixo e vamos conversar pelo WhatsApp."
+  whatsAppStep1Fields={[
+    {
+      name: 'Empresa',
+      type: 'text',
+      label: 'Empresa',
+      required: true
+    },
+    {
+      name: 'Tipo de evento',
+      type: 'select',
+      label: 'Tipo de evento',
+      required: false,
+      options: [
+        { value: '', label: 'Selecione o tipo de evento', disabled: true, selected: true },
+        { value: 'Confraternização', label: 'Confraternização' },
+        { value: 'Team building', label: 'Team building' },
+        { value: 'Treinamento/Workshop', label: 'Treinamento/Workshop' },
+        { value: 'Lançamento de produto', label: 'Lançamento de produto' },
+        { value: 'Outros', label: 'Outros' }
+      ]
+    },
+    {
+      name: 'Data do evento',
+      type: 'text',
+      label: 'Data do evento',
+      placeholder: 'dd/mm/aaaa',
+      required: false
+    },
+    {
+      name: 'Número de pessoas',
+      type: 'number',
+      label: 'Número de pessoas',
+      required: false
+    },
+    {
+      name: 'Detalhes adicionais',
+      type: 'textarea',
+      label: 'Detalhes adicionais',
+      placeholder: 'Conte um pouco sobre o evento que sua empresa imagina',
+      required: false
+    }
+  ]}
+>
+<div class="grain"></div>
+
+<div class="lightbox" id="lightbox">
+  <span class="lightbox-close" aria-label="Fechar">&times;</span>
+  <img src="" alt="" />
+  <p class="lightbox-caption"></p>
+</div>
+
+<!-- MENU -->
+<nav class="site-nav" id="siteNav">
+  <Img src="https://media.dmove.com.br/clients/serra-dos-cocais/photos/logo-serra-dos-cocais.webp" alt="Logotipo Serra dos Cocais" class="nav-logo" />
+  <a class="nav-cta" href="#contato"><span class="btn-line">Planejar meu evento</span></a>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="topo">
+  <div class="hero-media">
+    <Img src="https://media.dmove.com.br/clients/serra-dos-cocais/photos/hero_corporativo_resultado.webp" alt="Evento corporativo na Serra dos Cocais em meio à natureza" priority />
+  </div>
+  <div class="wrap hero-content">
+    <span class="cap on-dark">Itatiba · São Paulo</span>
+    <h1 class="display-1">A confraternização <br>da sua empresa em <br>meio à natureza</h1>
+    <p class="lead on-dark hero-lead-wide">Um ambiente inspirador para criar <br class="mobile-br">experiências memoráveis.</p>
+  </div>
+</header>
+
+<!-- SOBRE -->
+<section id="sobre">
+  <div class="wrap split">
+    <div class="reveal copy-block">
+      <span class="cap">Sobre a fazenda</span>
+      <h2 class="display-2" style="margin-top:16px">Experiências <br>que fortalecem <br>conexões</h2>
+      <p class="lead" style="margin-top:18px">Alguns encontros pedem mais do que uma sala de eventos. Pedem um ambiente capaz de estimular novas ideias, aproximar pessoas e transformar a forma como equipes e convidados se relacionam.</p>
+      <p class="lead" style="margin-top:16px">Na Serra dos Cocais, natureza, arquitetura e estrutura se unem em uma fazenda para receber celebrações que deixam uma impressão duradoura em todos os participantes.</p>
+    </div>
+    <div class="media reveal">
+      <Img src="https://media.dmove.com.br/clients/serra-dos-cocais/photos/sobre_corporativo_resultado.webp" alt="Ambiente da fazenda para eventos corporativos" />
+    </div>
+  </div>
+</section>
+
+<!-- ESTRUTURA -->
+<section id="estrutura">
+  <div class="wrap">
+    <div class="section-head narrow center reveal">
+      <span class="cap">Estrutura</span>
+      <h2 class="display-2" style="margin-top:16px">Um ambiente para <br>cada momento</h2>
+      <p class="lead center" style="margin-top:18px;max-width:60ch">A Serra dos Cocais abre ambientes distintos para que a sua festa corporativa seja desenhada do seu jeito.</p>
+      <p class="lead center" style="margin-top:6px;max-width:60ch">É a sua confraternização, com a liberdade de uma tela em branco e a segurança de quem cuida de cada acabamento.</p>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="carousel reveal" id="estruturaCarousel">
+      <button class="carousel-arrow prev" type="button" aria-label="Foto anterior">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <div class="carousel-track">
+        <div class="carousel-item"><Img src="https://media.dmove.com.br/clients/serra-dos-cocais/photos/estrutura_corporativo01_resultado.webp" alt="Estrutura da fazenda para eventos corporativos" /></div>
+        <div class="carousel-item"><Img src="https://media.dmove.com.br/clients/serra-dos-cocais/photos/estrutura_corporativo02_resultado.webp" alt="Estrutura da fazenda para eventos corporativos" /></div>
+        <div class="carousel-item"><Img src="https://media.dmove.com.br/clients/serra-dos-cocais/photos/estrutura_corporativo03_resultado.webp" alt="Estrutura da fazenda para eventos corporativos" /></div>
+        <div class="carousel-item"><Img src="https://media.dmove.com.br/clients/serra-dos-cocais/photos/estrutura_corporativo04_resultado.webp" alt="Estrutura da fazenda para eventos corporativos" /></div>
+        <div class="carousel-item"><Img src="https://media.dmove.com.br/clients/serra-dos-cocais/photos/estrutura_corporativo05_resultado.webp" alt="Estrutura da fazenda para eventos corporativos" /></div>
+        <div class="carousel-item"><Img src="https://media.dmove.com.br/clients/serra-dos-cocais/photos/estrutura_corporativo06_resultado.webp" alt="Estrutura da fazenda para eventos corporativos" /></div>
+      </div>
+      <button class="carousel-arrow next" type="button" aria-label="Próxima foto">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- INFRAESTRUTURA -->
+<section id="infraestrutura">
+  <div class="wrap">
+    <div class="section-head narrow center reveal">
+      <span class="cap">Infraestrutura</span>
+      <h2 class="display-2" style="margin-top:16px">Estrutura completa <br>para receber sua equipe</h2>
+    </div>
+    <div class="infra-list stagger">
+      <div class="infra-row" style="--i:0">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#956400" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21V10"/><path d="M12 10C12 6 9 4 5 4c0 4 2 7 7 7Z"/><path d="M12 14c0-4 3-6 7-6 0 4-2 7-7 7"/></svg></span>
+        <div class="t">Áreas ao ar livre</div>
+      </div>
+      <div class="infra-row" style="--i:1">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#956400" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9L17 7M7 17l-2.1 2.1"/></svg></span>
+        <div class="t">Iluminação em pontos fixos</div>
+      </div>
+      <div class="infra-row" style="--i:2">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#956400" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17h14l-1.5-5h-11L5 17Z"/><path d="M7 12l1-4h8l1 4"/><circle cx="8" cy="17" r="1.6"/><circle cx="16" cy="17" r="1.6"/></svg></span>
+        <div class="t">Estacionamento amplo</div>
+      </div>
+      <div class="infra-row" style="--i:3">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#956400" stroke-width="1.8" stroke-linecap="round"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 20c.6-3.2 2.8-5 5.5-5s4.9 1.8 5.5 5"/><circle cx="17" cy="9" r="2.4"/><path d="M15.5 14.6c2.4.2 4.3 1.8 4.9 4.4"/></svg></span>
+        <div class="t">Equipe especializada</div>
+      </div>
+      <div class="infra-row" style="--i:4">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#956400" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h10v10a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V8Z"/><path d="M16 10h2a2 2 0 0 1 0 4h-2"/><path d="M6 8c0-1.5 1-2.5 1-4M9 8c0-1.5 1-2.5 1-4M12 8c0-1.5-1-2.5-1-4"/></svg></span>
+        <div class="t">Chopeira exclusiva</div>
+      </div>
+      <div class="infra-row" style="--i:5">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#956400" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="5" r="2"/><path d="M12 7v6l-4 6M12 13l4 6M6 9.5c3.8-1.4 8.2-1.4 12 0"/></svg></span>
+        <div class="t">Acessibilidade</div>
+      </div>
+      <div class="infra-row" style="--i:6">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#956400" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="7" width="16" height="13" rx="2"/><path d="M9 7V5a3 3 0 0 1 6 0v2M4 12h16"/></svg></span>
+        <div class="t">Estrutura para staff</div>
+      </div>
+      <div class="infra-row" style="--i:7">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#956400" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="3" width="8" height="8" rx="1.5"/><rect x="13" y="3" width="8" height="8" rx="1.5"/><rect x="3" y="13" width="8" height="8" rx="1.5"/><rect x="13" y="13" width="8" height="8" rx="1.5"/></svg></span>
+        <div class="t">Versatilidade de ambientes</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOSPEDAGEM -->
+<section id="hospedagem">
+  <div class="wrap">
+    <div class="stay">
+      <div class="reveal">
+        <span class="cap">Hospedagem</span>
+        <h2 class="display-2" style="margin-top:16px">Hospedagem para <br>quem faz o <br>evento acontecer</h2>
+        <p class="lead" style="margin-top:18px">Chalés para até 43 hóspedes, oferecendo conforto e praticidade para acomodar convidados e organizadores durante toda a confraternização.</p>
+        <div class="stay-nums">
+          <div class="stay-num"><span class="stay-num-label">Chalés</span><span class="stay-num-value">08</span></div>
+          <div class="stay-num"><span class="stay-num-label">Hóspedes</span><span class="stay-num-value">43</span></div>
+        </div>
+      </div>
+      <div class="stay-media reveal">
+        <Img src="https://media.dmove.com.br/clients/serra-dos-cocais/photos/hospedagem_corporativo01_resultado.webp" alt="Hospedagem para eventos corporativos" />
+      </div>
+    </div>
+    <div class="carousel hosp-gal reveal" id="hospedagemCarousel">
+      <button class="carousel-arrow prev" type="button" aria-label="Foto anterior">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <div class="carousel-track">
+        <div class="carousel-item mobile-only"><Img src="https://media.dmove.com.br/clients/serra-dos-cocais/photos/hospedagem_corporativo01_resultado.webp" alt="Hospedagem para eventos corporativos" /></div>
+        <div class="carousel-item"><Img src="https://media.dmove.com.br/clients/serra-dos-cocais/photos/hospedagem_corporativo02_resultado.webp" alt="Hospedagem para eventos corporativos" /></div>
+        <div class="carousel-item"><Img src="https://media.dmove.com.br/clients/serra-dos-cocais/photos/hospedagem_corporativo03_resultado.webp" alt="Hospedagem para eventos corporativos" /></div>
+        <div class="carousel-item"><Img src="https://media.dmove.com.br/clients/serra-dos-cocais/photos/hospedagem_corporativo04_resultado.webp" alt="Hospedagem para eventos corporativos" /></div>
+        <div class="carousel-item"><Img src="https://media.dmove.com.br/clients/serra-dos-cocais/photos/hospedagem_corporativo05_resultado.webp" alt="Hospedagem para eventos corporativos" /></div>
+        <div class="carousel-item"><Img src="https://media.dmove.com.br/clients/serra-dos-cocais/photos/hospedagem_corporativo06_resultado.webp" alt="Hospedagem para eventos corporativos" /></div>
+      </div>
+      <button class="carousel-arrow next" type="button" aria-label="Próxima foto">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIA -->
+<section id="galeria">
+  <div class="wrap">
+    <div class="section-head narrow center reveal">
+      <span class="cap">Galeria</span>
+      <h2 class="display-2" style="margin-top:16px">Momentos que <br class="mobile-br">vão além <br class="desktop-br">do <br class="mobile-br">corporativo</h2>
+      <p class="lead center" style="margin-top:18px">Veja como empresas transformam confraternizações em experiências memoráveis.</p>
+    </div>
+  </div>
+  <div class="gal stagger">
+    <a style="--i:0" href="#galeria"><Img src="https://media.dmove.com.br/clients/serra-dos-cocais/photos/galeria_corporativo01_resultado.webp" alt="Evento corporativo na Serra dos Cocais" /></a>
+    <a style="--i:1" href="#galeria"><Img src="https://media.dmove.com.br/clients/serra-dos-cocais/photos/galeria_corporativo02_resultado.webp" alt="Evento corporativo na Serra dos Cocais" /></a>
+    <a style="--i:2" href="#galeria"><Img src="https://media.dmove.com.br/clients/serra-dos-cocais/photos/galeria_corporativo03_resultado.webp" alt="Evento corporativo na Serra dos Cocais" /></a>
+    <a style="--i:3" href="#galeria"><Img src="https://media.dmove.com.br/clients/serra-dos-cocais/photos/galeria_corporativo04_resultado.webp" alt="Evento corporativo na Serra dos Cocais" /></a>
+    <a style="--i:4" href="#galeria"><Img src="https://media.dmove.com.br/clients/serra-dos-cocais/photos/galeria_corporativo05_resultado.webp" alt="Evento corporativo na Serra dos Cocais" /></a>
+    <a style="--i:5" href="#galeria"><Img src="https://media.dmove.com.br/clients/serra-dos-cocais/photos/galeria_corporativo06_resultado.webp" alt="Evento corporativo na Serra dos Cocais" /></a>
+    <a style="--i:6" href="#galeria"><Img src="https://media.dmove.com.br/clients/serra-dos-cocais/photos/galeria_corporativo07_resultado.webp" alt="Evento corporativo na Serra dos Cocais" /></a>
+    <a style="--i:7" href="#galeria"><Img src="https://media.dmove.com.br/clients/serra-dos-cocais/photos/galeria_corporativo08_resultado.webp" alt="Evento corporativo na Serra dos Cocais" /></a>
+    <a style="--i:8" href="#galeria"><Img src="https://media.dmove.com.br/clients/serra-dos-cocais/photos/galeria_corporativo09_resultado.webp" alt="Evento corporativo na Serra dos Cocais" /></a>
+  </div>
+</section>
+
+<!-- CONTATO -->
+<section id="contato">
+  <div class="form-bg">
+    <Img src="https://media.dmove.com.br/clients/serra-dos-cocais/photos/formulario_corporativo_resultado.webp" alt="Evento corporativo na Serra dos Cocais" />
+  </div>
+  <div class="wrap">
+    <div class="form-wrap reveal">
+      <div class="form-pad">
+        <h2 class="display-2">Falta pouco para <br>o seu evento ser <br>um sucesso</h2>
+        <p class="lead on-dark" style="margin-top:14px;font-size:16px">Nossa equipe está pronta para atender você e planejar cada detalhe, com toda a estrutura e flexibilidade necessária para um evento impecável e produtivo.</p>
+        <LeadForm
+          formId="lead-form"
+          project={config.project_slug}
+          submitUrl={config.forms['lead-form'].webhooks[0]}
+          redirectUrl={config.forms['lead-form'].redirect_on_success}
+          submitText="Enviar solicitação"
+          honeypot
+          fields={[
+            { name: 'Nome', type: 'text', label: 'Nome', placeholder: '', required: true },
+            { type: 'row', fields: [
+              { name: 'WhatsApp', type: 'tel', label: 'WhatsApp', placeholder: '(11) 90000-0000', required: true },
+              { name: 'E-maiI', type: 'email', label: 'E-mail', placeholder: '', required: true },
+            ]},
+            { name: 'Empresa', type: 'text', label: 'Empresa', placeholder: '', required: true },
+            { name: 'Tipo de evento', type: 'select', label: 'Tipo de evento', required: false, options: [
+              { value: '', label: 'Selecione o tipo de evento', disabled: true, selected: true },
+              { value: 'Confraternização', label: 'Confraternização' },
+              { value: 'Team building', label: 'Team building' },
+              { value: 'Treinamento/Workshop', label: 'Treinamento/Workshop' },
+              { value: 'Lançamento de produto', label: 'Lançamento de produto' },
+              { value: 'Outros', label: 'Outros' }
+            ]},
+            { type: 'row', fields: [
+              { name: 'Data do evento', type: 'text', label: 'Data do evento', placeholder: 'dd/mm/aaaa', required: false },
+              { name: 'Número de pessoas', type: 'number', label: 'Número de pessoas', placeholder: '', required: false },
+            ]},
+            { name: 'Detalhes adicionais', type: 'textarea', label: 'Detalhes adicionais', placeholder: 'Conte um pouco sobre o evento que sua empresa imagina', required: false },
+            { name: 'fonte', type: 'hidden', value: 'Formulário /eventos-corporativos' },
+          ]}
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCALIZAÇÃO -->
+<section id="localizacao">
+  <div class="wrap">
+    <div class="narrow center reveal">
+      <span class="cap">Localização</span>
+      <h2 class="display-2" style="margin-top:16px">Uma localização <br class="desktop-br">que <br class="mobile-br">facilita a logística</h2>
+      <p class="lead center" style="margin-top:16px">Hotéis próximos e fácil acesso, a apenas <br class="mobile-br">65 km de São Paulo.</p>
+    </div>
+    <div class="map-frame reveal">
+      <iframe title="Mapa — Fazenda Serra dos Cocais, Itatiba SP" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Fazenda+Serra+dos+Cocais,+Itatiba,+SP&z=13&output=embed"></iframe>
+    </div>
+    <div class="map-links reveal">
+      <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=Fazenda+Serra+dos+Cocais,+Itatiba,+SP" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path fill="#EA4335" d="M12 2C7.58 2 4 5.58 4 10c0 5.25 6.72 11.36 7.02 11.62a1.5 1.5 0 0 0 1.96 0C13.28 21.36 20 15.25 20 10c0-4.42-3.58-8-8-8Z"/>
+          <circle cx="12" cy="10" r="3.4" fill="#fff"/>
+        </svg>
+        <span>Abrir no Google Maps</span>
+      </a>
+      <a class="map-btn" href="https://waze.com/ul?q=Fazenda+Serra+dos+Cocais,+Itatiba,+SP&navigate=yes" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="1" y="1" width="22" height="22" rx="6" fill="#05C8F6"/>
+          <path fill="#fff" d="M12 5.2c-3.5 0-6.2 2.5-6.2 5.9 0 1.7.8 3.1 1.9 4.1-.1.6-.4 1.3-.8 1.8-.1.2 0 .4.2.4.9-.1 1.9-.4 2.6-.8.7.2 1.5.3 2.3.3 3.5 0 6.2-2.5 6.2-5.8 0-3.4-2.7-5.9-6.2-5.9Z"/>
+          <circle cx="9.8" cy="10.6" r="1" fill="#05C8F6"/>
+          <circle cx="14.2" cy="10.6" r="1" fill="#05C8F6"/>
+        </svg>
+        <span>Abrir no Waze</span>
+      </a>
+    </div>
+    <div class="hotels reveal">
+      <h3 class="display-3" style="margin-bottom:18px;font-size:19.8px">Hotéis próximos</h3>
+      <div class="hotel">
+        <div><div class="n">Itatiba Orion Hotel</div><div class="addr">R. Alfredo Viêira Arantes, 305 – Centro, Itatiba – SP, 13251-184</div></div>
+        <span class="km">9,7 km</span>
+      </div>
+      <div class="hotel">
+        <div><div class="n">Ibis Itatiba</div><div class="addr">Rua Mario Belloni, Av. Nossa Sra. das Graças, 20, Itatiba – SP, 13257-401</div></div>
+        <span class="km">10,5 km</span>
+      </div>
+      <div class="hotel">
+        <div><div class="n">Vinhedo Plaza Hotel</div><div class="addr">Av. Independência, 4111 – Pinheirinho, Vinhedo – SP, 13289-700</div></div>
+        <span class="km">14,3 km</span>
+      </div>
+      <div class="hotel">
+        <div><div class="n">Colonial Hotel Itatiba</div><div class="addr">R. Dr. Jorge Tibiriçá, 91 – Centro, Itatiba – SP, 13250-100</div></div>
+        <span class="km">13,1 km</span>
+      </div>
+      <div class="hotel">
+        <div><div class="n">Blue Tree Towers Valinhos</div><div class="addr">Av. Invernada, 3237, Valinhos – SP, 13271-450</div></div>
+        <span class="km">20,5 km</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <Img src="https://media.dmove.com.br/clients/serra-dos-cocais/photos/logo-serra-dos-cocais.webp" alt="Logotipo Serra dos Cocais" class="footer-logo" />
+        <p class="footer-word">Serra dos Cocais</p>
+        <p class="display-3">Eventos corporativos com a grandiosidade da natureza.</p>
+      </div>
+      <a class="btn" href="#contato">Planejar meu evento</a>
+    </div>
+    <div class="foot-bottom">
+      <div>Eventos corporativos em fazenda histórica · Itatiba, SP</div>
+      <div>© <span id="yr"></span> Serra dos Cocais. Todos os direitos reservados.</div>
+      <div style="display:flex;align-items:center;gap:6px">
+        <span>Desenvolvido por</span>
+        <a href="https://dmove.com.br" target="_blank" rel="noopener" style="display:inline-flex;align-items:center">
+          <img src="https://media.dmove.com.br/clients/serra-dos-cocais/photos/Logotipo-dmove.webp" alt="Dmove" style="height:21px;width:auto;opacity:0.65;transition:opacity 0.25s" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.65" />
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+</Base>
+<script>
+  import '../scripts/eventos-corporativos.js';
+</script>

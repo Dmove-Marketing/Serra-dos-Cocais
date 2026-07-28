@@ -23,7 +23,7 @@ export function initForms() {
     const formId  = form.dataset.formId!;
     const project = form.dataset.project || window.location.hostname;
 
-    form.querySelectorAll<HTMLInputElement>('[name="telefone"]').forEach(applyPhoneMask);
+    form.querySelectorAll<HTMLInputElement>('[name="telefone"],[name="WhatsApp"]').forEach(applyPhoneMask);
 
     const submitUrl   = form.dataset.submitUrl;
     const redirectUrl = form.dataset.redirect;
@@ -70,6 +70,42 @@ export function initForms() {
           };
           field.addEventListener('input', clearError);
           field.addEventListener('change', clearError);
+        }
+      });
+
+      // Validação de formato: email
+      form.querySelectorAll<HTMLInputElement>('input[type="email"]').forEach((field) => {
+        if (!field.value) return; // campo vazio já capturado pelo required acima
+        const ok = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(field.value);
+        if (!ok) {
+          isValid = false;
+          (field as HTMLElement).style.borderColor = '#ef4444';
+          (field as HTMLElement).style.outline = '2px solid #ef4444';
+          if (!firstInvalid) firstInvalid = field;
+          const clear = () => {
+            (field as HTMLElement).style.removeProperty('border-color');
+            (field as HTMLElement).style.removeProperty('outline');
+            field.removeEventListener('input', clear);
+          };
+          field.addEventListener('input', clear);
+        }
+      });
+
+      // Validação de formato: telefone (mínimo 10 dígitos — DDD + número)
+      form.querySelectorAll<HTMLInputElement>('[name="telefone"],[name="WhatsApp"]').forEach((field) => {
+        if (!field.value) return;
+        const digits = field.value.replace(/\D/g, '');
+        if (digits.length < 10) {
+          isValid = false;
+          (field as HTMLElement).style.borderColor = '#ef4444';
+          (field as HTMLElement).style.outline = '2px solid #ef4444';
+          if (!firstInvalid) firstInvalid = field;
+          const clear = () => {
+            (field as HTMLElement).style.removeProperty('border-color');
+            (field as HTMLElement).style.removeProperty('outline');
+            field.removeEventListener('input', clear);
+          };
+          field.addEventListener('input', clear);
         }
       });
 
@@ -146,7 +182,7 @@ export function initForms() {
         'IP remoto': '',
         'Desenvolvido por': 'Dmove',
         form_id: formId,
-        form_name: formId,
+        form_name: 'form_' + formId.replace('lead-form', 'casamento').replace(/-/g, '_'),
         ...metaCapi,
       };
 
@@ -173,15 +209,20 @@ export function initForms() {
         const gridEl    = gridId    ? document.getElementById(gridId)    : null;
         const successEl = successId ? document.getElementById(successId) : null;
 
-        if (gridEl && successEl) {
+        if (gridEl) {
           gridEl.style.display = 'none';
+        }
+        if (successEl) {
           successEl.classList.add('active');
-        } else {
+          successEl.style.display = 'block';
+        }
+
+        if (!gridEl && !successEl) {
           form.innerHTML = `
-            <div style="text-align:center;padding:2rem;">
-              <div style="width:56px;height:56px;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;background:var(--color-primary,#2563eb);border-radius:50%;color:white;">✓</div>
-              <h3 style="font-size:1.15rem;font-weight:600;margin-bottom:4px;">Enviado com sucesso!</h3>
-              <p style="color:#666;font-size:0.9rem;">Em breve entraremos em contato.</p>
+            <div style="text-align:center;padding:2.5rem 1.5rem;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.2);border-radius:4px;color:#fff;">
+              <div style="width:56px;height:56px;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;background:rgba(255,255,255,0.15);border-radius:50%;color:white;font-size:24px;">✓</div>
+              <h3 style="font-size:1.25rem;font-weight:600;margin-bottom:8px;color:#fff;">Solicitação registrada!</h3>
+              <p style="color:rgba(255,255,255,0.8);font-size:0.95rem;">Nossa equipe entrará em contato em breve.</p>
             </div>`;
         }
       } catch (err: any) {

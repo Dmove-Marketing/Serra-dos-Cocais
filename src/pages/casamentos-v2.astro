@@ -1,0 +1,493 @@
+---
+// Gerado a partir de: casamentos-v2.html
+import Base from '../layouts/Base.astro';
+import config from '../../config.json';
+import Img from '../components/ui/Img.astro';
+import LeadForm from '../components/forms/LeadForm.astro';
+import '../styles/casamentos-v2.css';
+---
+
+<Base
+  title="Serra dos Cocais — Destination Wedding em uma fazenda histórica"
+  description="Cerimônia, festa e hospedagem em um único endereço. Um destination wedding exclusivo em uma fazenda histórica em Itatiba, SP."
+  ogImage="/images/og-casamentos-v2.jpg"
+  whatsAppStep1Fields={[
+    {
+      name: 'Tipo de evento',
+      type: 'select',
+      label: 'Tipo de evento',
+      required: false,
+      options: [
+        { value: '', label: 'Selecione o tipo de evento', disabled: true, selected: true },
+        { value: 'Bodas', label: 'Bodas' },
+        { value: 'Casamento', label: 'Casamento' },
+        { value: 'Confraternização social', label: 'Confraternização social' },
+        { value: 'Outros', label: 'Outros' }
+      ]
+    },
+    {
+      name: 'Nome do casal',
+      type: 'text',
+      label: 'Nome dos noivos',
+      placeholder: 'Ex: João e Maria',
+      required: false,
+      showWhen: { field: 'Tipo de evento', values: ['Casamento', 'Bodas'] }
+    },
+    {
+      name: 'Data do evento',
+      type: 'text',
+      label: 'Data do evento',
+      placeholder: 'dd/mm/aaaa',
+      required: false
+    },
+    {
+      name: 'Convidados',
+      type: 'number',
+      label: 'Convidados',
+      required: false
+    },
+    {
+      name: 'Mensagem',
+      type: 'textarea',
+      label: 'Mensagem',
+      placeholder: 'Conte um pouco sobre o casamento que vocês imaginam',
+      required: false
+    }
+  ]}
+>
+<div class="grain"></div>
+
+<div class="lightbox" id="lightbox">
+  <span class="lightbox-close" aria-label="Fechar">&times;</span>
+  <img src="" alt="" />
+  <p class="lightbox-caption"></p>
+</div>
+
+<!-- MENU -->
+<nav class="site-nav" id="siteNav">
+  <Img src="https://media.dmove.com.br/clients/serra-dos-cocais/photos/logo-serra-dos-cocais.webp" alt="Logotipo Serra dos Cocais" class="nav-logo" />
+  <a class="nav-cta" href="#contato"><span class="btn-line">Planejar meu casamento</span></a>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="topo">
+  <div class="hero-media">
+    <Img src="https://media.dmove.com.br/clients/serra-dos-cocais/photos/hero-background.webp" alt="Vista da fazenda Serra dos Cocais ao entardecer" />
+  </div>
+  <div class="wrap hero-content">
+    <span class="cap on-dark">Itatiba · São Paulo</span>
+    <h1 class="display-1">Seu Destination Wedding em uma fazenda histórica</h1>
+    <p class="lead on-dark">O cenário perfeito para o seu casamento.</p>
+  </div>
+</header>
+
+<!-- MANIFESTO -->
+<section class="manifesto">
+  <div class="wrap narrow center reveal">
+    <p class="display-2"><em>Moldada pela natureza.</em><br>Pensada para o seu<br class="desktop-br"> casamento.</p>
+  </div>
+</section>
+
+<!-- SOBRE A FAZENDA -->
+<section id="sobre">
+  <div class="wrap split">
+    <div class="reveal copy-block">
+      <span class="cap">Sobre a fazenda</span>
+      <h2 class="display-2" style="margin-top:16px">Sua história, <br class="mobile-br"><br class="desktop-br">sua identidade</h2>
+      <p class="lead" style="margin-top:18px">Um espaço que combina a beleza natural com um toque contemporâneo, criando uma atmosfera que inspira momentos inesquecíveis em meio à natureza.</p>
+      <p class="lead" style="margin-top:16px">Nosso conceito valoriza a experiência e a sofisticação, pensados para que os noivos vivam um destination wedding exclusivo.</p>
+    </div>
+    <div class="media reveal">
+      <Img src="https://media.dmove.com.br/clients/serra-dos-cocais/photos/sobre-fazenda-natureza.webp" alt="Ambiente da fazenda em meio à natureza" />
+    </div>
+  </div>
+</section>
+
+<!-- BREAK 1 -->
+<div class="break-img reveal">
+  <Img src="https://media.dmove.com.br/clients/serra-dos-cocais/photos/break-jardim-cerimonia.webp" alt="Jardim da fazenda preparado para cerimônia, ladeado por palmeiras, sob céu azul" />
+  <div class="break-caption">
+    <p class="cap on-dark">Serra dos Cocais — Itatiba, SP</p>
+  </div>
+</div>
+
+<!-- CERIMÔNIA -->
+<section id="cerimonia">
+  <div class="wrap">
+    <div class="section-head narrow center reveal">
+      <span class="cap">Cerimônia</span>
+      <h2 class="display-2" style="margin-top:16px">O começo da sua <br class="desktop-br">história, cercada por <br class="desktop-br">natureza</h2>
+      <p class="lead center" style="margin-top:18px">No charme do Casarão Colonial, no verde do Boulevard ou na leveza da Prainha, a cerimônia se torna um instante único e eterno.</p>
+    </div>
+    <div class="feature-grid cols-2 stagger">
+      <article class="feature-card" style="--i:0">
+        <Img src="https://media.dmove.com.br/clients/serra-dos-cocais/photos/cerimonia-casarao-colonial.webp" alt="Cerimônia em frente ao Casarão Colonial" />
+        <h3>Casarão Colonial</h3>
+        <p>Troque as alianças tendo um casarão histórico como cenário. Um momento marcado pela elegância de uma beleza que atravessa gerações.</p>
+      </article>
+      <article class="feature-card" style="--i:1">
+        <Img src="https://media.dmove.com.br/clients/serra-dos-cocais/photos/cerimonia-boulevard-natureza.webp" alt="Caminho do Boulevard imerso na natureza" />
+        <h3>Boulevard</h3>
+        <p>Caminhe até o altar com a sensação de estar completamente imersa na natureza. Um ambiente que transforma cada instante em algo leve, íntimo e memorável.</p>
+      </article>
+      <article class="feature-card" style="--i:2">
+        <Img src="https://media.dmove.com.br/clients/serra-dos-cocais/photos/cerimonia-prainha-lago.webp" alt="Prainha com vista para o lago da fazenda" />
+        <h3>Prainha</h3>
+        <p>Com os pés na areia e uma vista privilegiada da fazenda, a prainha é um espaço para quem sonha com uma celebração romântica e inigualável.</p>
+      </article>
+      <article class="feature-card" style="--i:3">
+        <Img src="https://media.dmove.com.br/clients/serra-dos-cocais/photos/cerimonia-espaco-jatoba.webp" alt="Espaço Jatobá com vista para o lago" />
+        <h3>Espaço Jatobá</h3>
+        <p>Uma opção para quem busca conforto e tranquilidade, com uma vista privilegiada para o lago que acompanha cada instante da celebração.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- BREAK 2 — FESTA -->
+<div class="break-img reveal" id="festa">
+  <Img src="https://media.dmove.com.br/clients/serra-dos-cocais/photos/festa-espaco-raposa.webp" alt="Festa no Espaço da Raposa" style="object-position:center 75%" />
+  <div class="break-caption">
+    <p class="cap on-dark" style="margin-bottom:12px">Festa</p>
+    <p class="display-3" style="color:#fff">Espaço da Raposa</p>
+  </div>
+</div>
+<section style="padding-top:96px;padding-bottom:0">
+  <div class="wrap">
+    <div class="copy-block reveal center">
+      <p class="lead">Pensado para receber festas com identidade, oferece liberdade para criar diferentes composições de mesas, lounges, pista de dança e bar de drinks.</p>
+      <p class="lead" style="margin-top:16px">E entre os detalhes que tornam essa experiência ainda mais especial está a chopeira exclusiva, com capacidade para servir até 5 tipos diferentes de chopp.</p>
+      <p style="margin-top:22px"><span class="tag-plain">Até 350 convidados sentados</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIA — entre Festa e Hospedagem -->
+<div class="entre-gal reveal" id="entreGal">
+  <button class="entre-gal-arrow prev" type="button" aria-label="Foto anterior">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+  </button>
+  <div class="entre-gal-track">
+    <Img class="entre-gal-item" src="https://media.dmove.com.br/clients/serra-dos-cocais/photos/entre_session01_resultado.webp" alt="Detalhe da fazenda Serra dos Cocais" />
+    <Img class="entre-gal-item" src="https://media.dmove.com.br/clients/serra-dos-cocais/photos/entre_session02_resultado.webp" alt="Detalhe da fazenda Serra dos Cocais" />
+    <Img class="entre-gal-item" src="https://media.dmove.com.br/clients/serra-dos-cocais/photos/entre_session03_resultado.webp" alt="Detalhe da fazenda Serra dos Cocais" />
+    <Img class="entre-gal-item" src="https://media.dmove.com.br/clients/serra-dos-cocais/photos/entre_session04_resultado.webp" alt="Detalhe da fazenda Serra dos Cocais" />
+  </div>
+  <button class="entre-gal-arrow next" type="button" aria-label="Próxima foto">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+  </button>
+</div>
+
+<!-- HOSPEDAGEM -->
+<section id="hospedagem">
+  <div class="wrap">
+    <div class="stay">
+      <div class="reveal">
+        <span class="cap">Hospedagem</span>
+        <h2 class="display-2" style="margin-top:16px">Stay in Serra, o convite para permanecer</h2>
+        <p class="lead" style="margin-top:18px">Vocês e seus convidados são acolhidos para viver um wedding weekend sem pressa. Hospedagem de alto padrão, com a vista do lago e o conforto de quem se sente em casa.</p>
+        <div class="stay-nums">
+          <div class="stay-num"><span class="stay-num-label">Chalés</span><span class="stay-num-value">08</span></div>
+          <div class="stay-num"><span class="stay-num-label">Hóspedes</span><span class="stay-num-value">43</span></div>
+        </div>
+      </div>
+      <div class="stay-media reveal">
+        <Img src="https://media.dmove.com.br/clients/serra-dos-cocais/photos/hospedagem-chales-lago.webp" alt="Chalés de hospedagem com vista para o lago" />
+      </div>
+    </div>
+    <div class="feature-grid cols-3 stagger">
+      <article class="feature-card" style="--i:0">
+        <Img src="https://media.dmove.com.br/clients/serra-dos-cocais/photos/hospedagem-prefesta-pizza.webp" alt="Noite de pizzas artesanais na véspera" style="height:320px" />
+        <h3>Pré-festa</h3>
+        <p>Comece a celebração na véspera com uma noite de pizzas artesanais e clima intimista.</p>
+      </article>
+      <article class="feature-card" style="--i:1">
+        <Img src="https://media.dmove.com.br/clients/serra-dos-cocais/photos/hospedagem-dia-dos-noivos.webp" alt="Preparativos no dia dos noivos" style="height:320px" />
+        <h3>Experiências</h3>
+        <p>Viva o dia da noiva e o dia do noivo com calma durante cada preparativo.</p>
+      </article>
+      <article class="feature-card" style="--i:2">
+        <Img src="https://media.dmove.com.br/clients/serra-dos-cocais/photos/hospedagem-cafe-despedida.webp" alt="Café da manhã de despedida" style="height:320px" />
+        <h3>Gastronomia</h3>
+        <p>Prolongue o fim de semana com um café da manhã para reunir os convidados no dia seguinte.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- BREAK 3 -->
+<div class="break-img reveal">
+  <Img src="https://media.dmove.com.br/clients/serra-dos-cocais/photos/break-casal-casarao.webp" alt="Casal caminhando de mãos dadas em frente ao casarão" />
+  <div class="break-caption">
+    <p class="cap on-dark">Um casamento com a grandiosidade da natureza.</p>
+  </div>
+</div>
+
+<!-- DEPOIMENTOS -->
+<section class="testi" id="depoimentos">
+  <div class="wrap">
+    <div class="section-head narrow center reveal">
+      <span class="cap">Depoimentos</span>
+      <h2 class="display-2" style="margin-top:16px">Quem viveu, recomenda</h2>
+    </div>
+    <div class="testi-grid stagger">
+      <div class="testi-item" style="--i:0">
+        <span class="stars" aria-label="5 estrelas">★★★★★</span>
+        <blockquote>“Foi simplesmente inesquecível! A fazenda é incrível, com uma estrutura impecável e cada detalhe muito bem cuidado. A organização e o suporte da equipe foram excepcionais do início ao fim, tudo funcionou perfeitamente. Um lugar que supera expectativas e torna qualquer momento ainda mais especial!”</blockquote>
+        <div class="testi-who">Allef Navarro<span class="role">Celebrou na Serra dos Cocais</span></div>
+      </div>
+      <div class="testi-item" style="--i:1">
+        <span class="stars" aria-label="5 estrelas">★★★★★</span>
+        <blockquote>“Que lugar lindíssimo!! Realizamos nosso casamento lá em setembro/25 e não poderia ser uma escolha mais assertiva. O lago dá um charme todo especial. Toda a estrutura, tanto de chalés quanto do espaço para o evento em si, cozinha e copeira, foi tudo impecável. E claro, a equipe também. Nunca vou esquecer!”</blockquote>
+        <div class="testi-who">Alle Cruz<span class="role">Celebrou na Serra dos Cocais</span></div>
+      </div>
+      <div class="testi-item" style="--i:2">
+        <span class="stars" aria-label="5 estrelas">★★★★★</span>
+        <blockquote>“Foi tudo maravilhoso desde a chegada ao fim do evento. Organização impecável. Os funcionários sempre atenciosos, prontos para ajudar ou tirar dúvidas, todos muito simpáticos e agradáveis.”</blockquote>
+        <div class="testi-who">Andréia Braga<span class="role">Celebrou na Serra dos Cocais</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INFRAESTRUTURA -->
+<section id="infraestrutura">
+  <div class="wrap">
+    <div class="section-head narrow center reveal">
+      <span class="cap">Infraestrutura</span>
+      <h2 class="display-2" style="margin-top:16px">O privilégio <br class="desktop-br">de aproveitar <br class="mobile-br">cada <br class="desktop-br">instante</h2>
+      <p class="lead center" style="margin-top:18px">Enquanto vocês se entregam ao casamento, nós cuidamos dos detalhes.</p>
+    </div>
+    <div class="infra-list stagger">
+      <div class="infra-row" style="--i:0">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#956400" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h10v10a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V8Z"/><path d="M16 10h2a2 2 0 0 1 0 4h-2"/><path d="M6 8c0-1.5 1-2.5 1-4M9 8c0-1.5 1-2.5 1-4M12 8c0-1.5-1-2.5-1-4"/></svg></span>
+        <div><div class="t">Chopeira exclusiva</div><div class="d">Surpreendendo com até 5 tipos de chopp servidos na festa.</div></div>
+      </div>
+      <div class="infra-row" style="--i:1">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#956400" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9L17 7M7 17l-2.1 2.1"/></svg></span>
+        <div><div class="t">Iluminação em pontos fixos</div><div class="d">Ambientes valorizados do fim de tarde à madrugada.</div></div>
+      </div>
+      <div class="infra-row" style="--i:2">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#956400" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="3" width="8" height="8" rx="1.5"/><rect x="13" y="3" width="8" height="8" rx="1.5"/><rect x="3" y="13" width="8" height="8" rx="1.5"/><rect x="13" y="13" width="8" height="8" rx="1.5"/></svg></span>
+        <div><div class="t">Versatilidade de ambientes</div><div class="d">Diferentes composições para cada momento do evento.</div></div>
+      </div>
+      <div class="infra-row" style="--i:3">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#956400" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17h14l-1.5-5h-11L5 17Z"/><path d="M7 12l1-4h8l1 4"/><circle cx="8" cy="17" r="1.6"/><circle cx="16" cy="17" r="1.6"/></svg></span>
+        <div><div class="t">Estacionamento amplo</div><div class="d">Conforto e segurança para todos os convidados e fornecedores.</div></div>
+      </div>
+      <div class="infra-row" style="--i:4">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#956400" stroke-width="1.8" stroke-linecap="round"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 20c.6-3.2 2.8-5 5.5-5s4.9 1.8 5.5 5"/><circle cx="17" cy="9" r="2.4"/><path d="M15.5 14.6c2.4.2 4.3 1.8 4.9 4.4"/></svg></span>
+        <div><div class="t">Equipe de apoio</div><div class="d">Suporte atento do início ao fim do evento.</div></div>
+      </div>
+      <div class="infra-row" style="--i:5">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#956400" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="7" width="16" height="13" rx="2"/><path d="M9 7V5a3 3 0 0 1 6 0v2M4 12h16"/></svg></span>
+        <div><div class="t">Estruturas para staff</div><div class="d">Cozinha, camarim, refeitório e apoio completo para fornecedores.</div></div>
+      </div>
+      <div class="infra-row" style="--i:6">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#956400" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18M8 5v5"/></svg></span>
+        <div><div class="t">Sala exclusiva para assessoria</div><div class="d">Um espaço reservado para a produção do grande dia.</div></div>
+      </div>
+      <div class="infra-row" style="--i:7">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#956400" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="5" r="2"/><path d="M12 7v6l-4 6M12 13l4 6M6 9.5c3.8-1.4 8.2-1.4 12 0"/></svg></span>
+        <div><div class="t">Acessibilidade</div><div class="d">Espaços pensados para receber todas as pessoas.</div></div>
+      </div>
+      <div class="infra-row" style="--i:8">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#956400" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21V10"/><path d="M12 10C12 6 9 4 5 4c0 4 2 7 7 7Z"/><path d="M12 14c0-4 3-6 7-6 0 4-2 7-7 7"/></svg></span>
+        <div><div class="t">Integrado com a natureza</div><div class="d">Seu casamento rodeado por uma paisagem natural.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIA -->
+<section id="galeria">
+  <div class="wrap">
+    <div class="section-head narrow center reveal">
+      <span class="cap">Galeria</span>
+      <h2 class="display-2" style="margin-top:16px">Através do olhar de <br class="desktop-br"><br class="mobile-br">quem já viveu</h2>
+      <p class="lead center" style="margin-top:18px">Veja momentos capturados aqui e inspire-se para criar uma celebração que reflita seu estilo e personalidade.</p>
+    </div>
+  </div>
+  <div class="gal stagger">
+    <a style="--i:0" href="#galeria"><Img src="https://media.dmove.com.br/clients/serra-dos-cocais/photos/galeria-01-casal-celebracao.webp" alt="Casal em momento de celebração" /></a>
+    <a style="--i:1" href="#galeria"><Img src="https://media.dmove.com.br/clients/serra-dos-cocais/photos/galeria-02-decoracao-detalhe.webp" alt="Detalhe da decoração do casamento" /></a>
+    <a style="--i:2" href="#galeria"><Img src="https://media.dmove.com.br/clients/serra-dos-cocais/photos/galeria-03-cerimonia-ar-livre.webp" alt="Cerimônia ao ar livre na fazenda" /></a>
+    <a style="--i:3" href="#galeria"><Img src="https://media.dmove.com.br/clients/serra-dos-cocais/photos/galeria-04-recepcao-convidados.webp" alt="Recepção dos convidados" /></a>
+    <a style="--i:4" href="#galeria"><Img src="https://media.dmove.com.br/clients/serra-dos-cocais/photos/galeria-05-mesa-posta-jantar.webp" alt="Mesa posta para o jantar de casamento" /></a>
+    <a style="--i:5" href="#galeria"><Img src="https://media.dmove.com.br/clients/serra-dos-cocais/photos/galeria-06-noivos-entardecer.webp" alt="Noivos ao entardecer na fazenda" /></a>
+    <a style="--i:6" href="#galeria"><Img src="https://media.dmove.com.br/clients/serra-dos-cocais/photos/galeria-07-cerimonia-natureza.webp" alt="Cerimônia cercada pela natureza" /></a>
+    <a style="--i:7" href="#galeria"><Img src="https://media.dmove.com.br/clients/serra-dos-cocais/photos/galeria-08-festa-pista-iluminada.webp" alt="Festa com pista de dança iluminada" /></a>
+    <a style="--i:8" href="#galeria"><Img src="https://media.dmove.com.br/clients/serra-dos-cocais/photos/galeria-09-cerimonia.webp" alt="Momento emocionante da cerimônia" /></a>
+    <a style="--i:9" href="#galeria"><Img src="https://media.dmove.com.br/clients/serra-dos-cocais/photos/galeria-10-cerimonia.webp" alt="Cerimônia de casamento na Serra dos Cocais" /></a>
+    <a style="--i:10" href="#galeria"><Img src="https://media.dmove.com.br/clients/serra-dos-cocais/photos/galeria-11-cerimonia-ao-ar-livre.webp" alt="Decoração da cerimônia ao ar livre" /></a>
+    <a style="--i:11" href="#galeria"><Img src="https://media.dmove.com.br/clients/serra-dos-cocais/photos/galeria-12-cerimonia.webp" alt="Cenário da cerimônia montado para o casamento" /></a>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="wrap">
+    <div class="faq-split">
+      <div class="faq-content">
+        <div class="section-head narrow reveal">
+          <span class="cap">FAQ</span>
+          <h2 class="display-2" style="margin-top:16px">Dúvidas Frequentes</h2>
+          <p class="lead" style="margin-top:18px">Tudo o que você precisa saber sobre a experiência.</p>
+        </div>
+        <div class="faq reveal">
+          <details>
+            <summary>Quantos hóspedes a Serra dos Cocais pode acomodar?<span class="sign"></span></summary>
+            <p class="a">A hospedagem conta com 8 chalés e capacidade para até 43 hóspedes. Assim, familiares e amigos podem aproveitar toda a experiência do wedding weekend com conforto.</p>
+          </details>
+          <details>
+            <summary>É possível realizar cerimônia, festa e hospedagem no mesmo local?<span class="sign"></span></summary>
+            <p class="a">Sim. A Serra dos Cocais foi planejada para que todos os momentos do casamento aconteçam em um único endereço, proporcionando mais conforto para os noivos e seus convidados.</p>
+          </details>
+          <details>
+            <summary>Existe uma opção coberta para a cerimônia?<span class="sign"></span></summary>
+            <p class="a">Sim. O Espaço Jatobá oferece uma estrutura elegante e integrada à paisagem da fazenda, permitindo que o casamento aconteça com conforto e sofisticação.</p>
+          </details>
+          <details>
+            <summary>Quantos convidados o espaço comporta?<span class="sign"></span></summary>
+            <p class="a">O Espaço da Raposa possui capacidade para receber até 350 convidados sentados. Porém, possui áreas externas que permitem eventos maiores para até 1000 pessoas.</p>
+          </details>
+          <details>
+            <summary>A Serra dos Cocais trabalha com fornecedores próprios?<span class="sign"></span></summary>
+            <p class="a">A Serra dos Cocais oferece liberdade para que os noivos construam o casamento de acordo com o seu estilo, contando também com parceiros experientes que conhecem a estrutura da fazenda.</p>
+          </details>
+        </div>
+      </div>
+      <div class="faq-media reveal">
+        <Img src="https://media.dmove.com.br/clients/serra-dos-cocais/photos/image_FAQ.webp" alt="Serra dos Cocais — Dúvidas Frequentes" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTATO -->
+<section id="contato">
+  <div class="form-bg">
+    <Img src="https://media.dmove.com.br/clients/serra-dos-cocais/photos/contato-casal-celebrando.webp" alt="Casal celebrando na Serra dos Cocais" />
+  </div>
+  <div class="wrap">
+    <div class="form-wrap reveal">
+      <div class="form-pad">
+        <h2 class="display-2">Falta pouco para o seu casamento acontecer aqui</h2>
+        <p class="lead on-dark" style="margin-top:14px;font-size:16px">Nossa equipe está pronta para te atender.</p>
+        <LeadForm
+          formId="lead-form"
+          project={config.project_slug}
+          submitUrl={config.forms['lead-form'].webhooks[0]}
+          redirectUrl={config.forms['lead-form'].redirect_on_success}
+          submitText="Enviar solicitação"
+          honeypot
+          fields={[
+            { name: 'Nome', type: 'text', label: 'Nome', placeholder: '', required: true },
+            { type: 'row', fields: [
+              { name: 'WhatsApp', type: 'tel', label: 'WhatsApp', placeholder: '(11) 90000-0000', required: true },
+              { name: 'E-maiI', type: 'email', label: 'E-mail', placeholder: '', required: true },
+            ]},
+            { name: 'Tipo de evento', type: 'select', label: 'Tipo de evento', required: false, id: 'tipoEvento', options: [
+              { value: '', label: 'Selecione o tipo de evento', disabled: true, selected: true },
+              { value: 'Bodas', label: 'Bodas' },
+              { value: 'Casamento', label: 'Casamento' },
+              { value: 'Confraternização social', label: 'Confraternização social' },
+              { value: 'Outros', label: 'Outros' }
+            ]},
+            { name: 'Nome do casal', type: 'text', label: 'Nome dos noivos', placeholder: 'Ex: João e Maria', required: false, id: 'nomeNoivos' },
+            { type: 'row', fields: [
+              { name: 'Data do evento', type: 'text', label: 'Data do evento', placeholder: 'dd/mm/aaaa', required: false },
+              { name: 'Convidados', type: 'number', label: 'Convidados', placeholder: '', required: false },
+            ]},
+            { name: 'Mensagem', type: 'textarea', label: 'Mensagem', placeholder: 'Conte um pouco sobre o casamento que vocês imaginam', required: false, id: 'mensagemField' },
+            { name: 'fonte', type: 'hidden', value: 'Formulário /casamentos-v2' },
+          ]}
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCALIZAÇÃO -->
+<section id="localizacao">
+  <div class="wrap">
+    <div class="narrow center reveal">
+      <span class="cap">Localização</span>
+      <h2 class="display-2" style="margin-top:16px">Perto o suficiente <br class="desktop-br"><br class="mobile-br">Longe da rotina</h2>
+      <p class="lead" style="margin-top:16px">A fazenda fica em Itatiba, interior de São Paulo, com fácil acesso a hotéis da região para convidados adicionais.</p>
+    </div>
+    <div class="map-frame reveal">
+      <iframe title="Mapa — Fazenda Serra dos Cocais, Itatiba SP" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Fazenda+Serra+dos+Cocais,+Itatiba,+SP&z=13&output=embed"></iframe>
+    </div>
+    <div class="map-links reveal">
+      <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=Fazenda+Serra+dos+Cocais,+Itatiba,+SP" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path fill="#EA4335" d="M12 2C7.58 2 4 5.58 4 10c0 5.25 6.72 11.36 7.02 11.62a1.5 1.5 0 0 0 1.96 0C13.28 21.36 20 15.25 20 10c0-4.42-3.58-8-8-8Z"/>
+          <circle cx="12" cy="10" r="3.4" fill="#fff"/>
+        </svg>
+        <span>Abrir no Google Maps</span>
+      </a>
+      <a class="map-btn" href="https://waze.com/ul?q=Fazenda+Serra+dos+Cocais,+Itatiba,+SP&navigate=yes" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="1" y="1" width="22" height="22" rx="6" fill="#05C8F6"/>
+          <path fill="#fff" d="M12 5.2c-3.5 0-6.2 2.5-6.2 5.9 0 1.7.8 3.1 1.9 4.1-.1.6-.4 1.3-.8 1.8-.1.2 0 .4.2.4.9-.1 1.9-.4 2.6-.8.7.2 1.5.3 2.3.3 3.5 0 6.2-2.5 6.2-5.8 0-3.4-2.7-5.9-6.2-5.9Z"/>
+          <circle cx="9.8" cy="10.6" r="1" fill="#05C8F6"/>
+          <circle cx="14.2" cy="10.6" r="1" fill="#05C8F6"/>
+        </svg>
+        <span>Abrir no Waze</span>
+      </a>
+    </div>
+    <div class="hotels reveal">
+      <h3 class="display-3" style="margin-bottom:18px;font-size:19.8px">Hotéis próximos</h3>
+      <div class="hotel">
+        <div><div class="n">Itatiba Orion Hotel</div><div class="addr">R. Alfredo Viêira Arantes, 305 – Centro, Itatiba – SP, 13251-184</div></div>
+        <span class="km">9,7 km</span>
+      </div>
+      <div class="hotel">
+        <div><div class="n">Vinhedo Plaza Hotel</div><div class="addr">Av. Independência, 4111 – Pinheirinho, Vinhedo – SP, 13289-700</div></div>
+        <span class="km">14,3 km</span>
+      </div>
+      <div class="hotel">
+        <div><div class="n">Ibis Itatiba</div><div class="addr">Rua Mario Belloni, Av. Nossa Sra. das Graças, 20, Itatiba – SP, 13257-401</div></div>
+        <span class="km">10,5 km</span>
+      </div>
+      <div class="hotel">
+        <div><div class="n">Colonial Hotel Itatiba</div><div class="addr">R. Dr. Jorge Tibiriçá, 91 – Centro, Itatiba – SP, 13250-100</div></div>
+        <span class="km">13,1 km</span>
+      </div>
+      <div class="hotel">
+        <div><div class="n">Blue Tree Towers Valinhos</div><div class="addr">Av. Invernada, 3237, Valinhos – SP, 13271-450</div></div>
+        <span class="km">20,5 km</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <Img src="https://media.dmove.com.br/clients/serra-dos-cocais/photos/logo-serra-dos-cocais.webp" alt="Logotipo Serra dos Cocais" class="footer-logo" />
+        <p class="footer-word">Serra dos Cocais</p>
+        <p class="display-3">Um casamento com a grandiosidade da natureza.</p>
+      </div>
+      <a class="btn" href="#contato">Planejar meu casamento</a>
+    </div>
+    <div class="foot-bottom">
+      <div>Destination wedding em fazenda histórica · Itatiba, SP</div>
+      <div>© <span id="yr"></span> Serra dos Cocais. Todos os direitos reservados.</div>
+      <div style="display:flex;align-items:center;gap:6px">
+        <span>Desenvolvido por</span>
+        <a href="https://dmove.com.br" target="_blank" rel="noopener" style="display:inline-flex;align-items:center">
+          <img src="https://media.dmove.com.br/clients/serra-dos-cocais/photos/Logotipo-dmove.webp" alt="Dmove" style="height:21px;width:auto;opacity:0.65;transition:opacity 0.25s" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.65" />
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+</Base>
+<script>
+  import '../scripts/casamentos-v2.js';
+</script>

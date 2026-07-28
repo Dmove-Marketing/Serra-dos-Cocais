@@ -1,10 +1,16 @@
 {
-  "project_name": "Nome do Projeto",
-  "project_slug": "slug-do-projeto",
-  "client": "Nome do Cliente",
-  "environment": "development",
+  "project_name": "Serra dos Cocais",
+  "project_slug": "serra-dos-cocais",
+  "client": "Serra dos Cocais",
+  "environment": "production",
   "tracking": {
-    "gtm_id": "GTM-XXXXXXX",
+    "gtm_id": "GTM-WX8MN4QQ",
+    "enabled": true
+  },
+  "whatsapp": {
+    "phone": "5511999999999",
+    "display_name": "Serra dos Cocais",
+    "avatar": "https://media.dmove.com.br/clients/serra-dos-cocais/photos/logo_serra_dourado.webp",
     "enabled": true
   },
   "forms": {
@@ -12,7 +18,7 @@
       "id": "lead-form",
       "redirect_on_success": "",
       "webhooks": [
-        "https://n8n.dmove.com.br/webhook/SLUG-DO-PROJETO"
+        "https://n8n.dmove.com.br/webhook/serra-dos-cocais"
       ],
       "fields_required": [
         "nome",
@@ -23,8 +29,8 @@
   },
   "deploy": {
     "user": "root",
-    "server": "",
-    "remote_path": "/var/www/dominio.com.br"
+    "server": "157.173.197.116",
+    "remote_path": "/var/www/eventos.serradoscocais.com.br"
   },
   "meta": {
     "created_at": "YYYY-MM-DD",
