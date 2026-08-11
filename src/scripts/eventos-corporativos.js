@@ -32,6 +32,18 @@ document.querySelectorAll('.carousel').forEach((wrap) => {
   next.addEventListener('click', () => track.scrollBy({ left: scrollAmount(), behavior: 'smooth' }));
 });
 
+// Slide automático do background da Infraestrutura
+(function(){
+  const slides = document.querySelectorAll('.infra-slider .infra-slide');
+  if(!slides.length) return;
+  let curr = 0;
+  setInterval(()=>{
+    slides[curr].classList.remove('active');
+    curr = (curr + 1) % slides.length;
+    slides[curr].classList.add('active');
+  }, 4000);
+})();
+
 // Máscara simples de data dd/mm/aaaa
 document.getElementById('f-data')?.addEventListener('input', (ev) => {
   const dataInput = ev.target;
